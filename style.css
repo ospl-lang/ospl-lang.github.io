@@ -9,3 +9,7 @@ span{
     color: black;
     /*border: 3px solid blanchedalmond;*/
 }
+body {
+  background-image: url("tiledbg.png");
+  background-repeat: repeat;
+}
