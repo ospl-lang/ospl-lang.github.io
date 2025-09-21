@@ -14,8 +14,8 @@ async function getLatestCratesIoVersion(crateName) {
 
 getLatestCratesIoVersion("ospl").then(version => {
   if (version) {
-    document.getElementById("latest-version").innerText = version;
+    document.getElementById("latest-version").innerHTML = `<a href="https://crates.io/crates/ospl">${version}</a>`;
   } else {
-    document.getElementById("latest-version").innerText = "Could not retreive the latest version of OSPL";
+    document.getElementById("latest-version").innerHTML = "Could not retreive the latest version of OSPL from <a href=https://crates.io/crates/ospl>crates.io</a>";
   }
 });
