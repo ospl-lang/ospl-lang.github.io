@@ -1,0 +1,11 @@
+code{
+    background-color: black;
+    color: lightgreen;
+    border: 3px solid black;
+    margin: 3px;
+}
+span{
+    background-color: blanchedalmond;
+    color: black;
+    /*border: 3px solid blanchedalmond;*/
+}
