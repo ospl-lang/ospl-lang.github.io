@@ -16,6 +16,6 @@ getLatestCratesIoVersion("ospl").then(version => {
   if (version) {
     document.getElementById("latest-version").innerHTML = `<a href="https://crates.io/crates/ospl">${version}</a>`;
   } else {
-    document.getElementById("latest-version").innerHTML = "Could not retreive the latest version of OSPL from <a href=https://crates.io/crates/ospl>crates.io</a>";
+    document.getElementById("latest-version").innerHTML = "Could not retreive the latest version of OSPL from <a href=https://crates.io/crates/ospl>crates.io</a>.";
   }
 });
