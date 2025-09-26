@@ -1,3 +1,5 @@
+yo add this to the site for install guide
+```html
 <html>
 
 <head>
@@ -6,12 +8,32 @@
 </head>
 
 <body>
+    <!-- OSPL LOGO -->
     <a href="index.html"><img style="display: block;margin: auto;" src="logo.png" width="400" height="250"></a>
-    <h1 align="center">Welcome to the OSPL Language Installation Guide Page with the Absurdly Long Page Name from the
-        OSPL Language Website</h1>
-    <p>
-        <span>artemis</span> can u add the thing thanks bye
-    </p>
+
+    <h1>Linux/BSD/UNIX installation</h1>
+    <ul>
+        <li>Install Rustup, use your system package manager if possible. If your system package manager does not have rustup in its lists, execute this command in a terminal
+        <code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></li>
+        <li>you may need to run <code>rustup default stable</code></li>
+        <li>run <code>cargo install ospl</code> to install or upgrade the latest version</li>
+        <li>if you use bash, edit <code>~/.bashrc</code>
+            and add the line <code>export PATH="$PATH:$HOME/.cargo/bin"</code>.
+            if you prefer a different shell, edit your <code>$PATH</code> accordingly (I assume you know how to do that
+            if you're the type to use a different shell)</li>
+    </ul>
+
+    <h1>Windows installation</h1>
+    <ul>
+        <li>Go to <a href="https://win.rustup.rs">win.rustup.rs</a> to obtain the file rustup-init.exe</li>
+        <li>Run this program</li>
+        <li>Open a command prompt, type <code>cargo install ospl</code>, press enter and wait
+            this installs or upgrades OSPL</li>
+    </ul>
+
+    <h1>MacOS installation</h1>
+    <p>MACOS SUPPORT SHOULD WORK, BUT IT IS UNTESTED!!! USE THE SAME STEPS AS LINUX AND IT MAY OR MAY NOT WORK.</p>
 </body>
 
 </html>
+```
