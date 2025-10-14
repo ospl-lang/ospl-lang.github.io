@@ -15,3 +15,7 @@ body {
   background-image: url("tiledbg.png");
   background-repeat: repeat;
 }
+
+.nerdout{
+  font: 2em sans-serif;
+}
