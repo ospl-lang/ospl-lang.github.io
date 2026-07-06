@@ -9,28 +9,61 @@
     <!-- OSPL LOGO -->
     <a href="index.html"><img style="display: block;margin: auto;" src="ospl.png" width="400" height="250"></a>
 
-    <h1>Linux/BSD/UNIX installation</h1>
+    <h1>linux/bsd/unix installation</h1>
     <ul>
-        <li>Install Rustup, use your system package manager if possible. If your system package manager does not have rustup in its lists, execute this command in a terminal
+        <li>install rustup, use your system package manager if possible. if your system package manager does not have rustup in its lists, execute this command in a terminal
         <code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></li>
-        <li>you may need to run <code>rustup default stable</code></li>
-        <li>run <code>cargo install ospl</code> to install or upgrade the latest version</li>
-        <li>if you use bash, edit <code>~/.bashrc</code>
+
+        <li>you may need to run <code>rustup toolchain install stable</code></li>
+        <li>run <code>git clone https://github.com/ospl-lang/osmium</code> to obtain ospl's latest source code</li>
+        <li>change directory into the this folder: <code>cd osmium/</code></li>
+        <li>run <code>cargo install --path 'crates/ospl-toolchain'</code></li>
+        <li>if you use bash, edit <code>$HOME/.profile</code>
             and add the line <code>export PATH="$PATH:$HOME/.cargo/bin"</code>.
-            if you prefer a different shell, edit your <code>$PATH</code> accordingly (I assume you know how to do that
+            if you prefer a different shell, edit your <code>$PATH</code> accordingly (i assume you know how to do that
             if you're the type to use a different shell)</li>
+
+        <li>log out and log back in, you should now have the <code>ospt</code> command.</li>
     </ul>
 
-    <h1>Windows installation</h1>
+    <h1>windows installation (windows 10 or newer)</h1>
     <ul>
-        <li>Go to <a href="https://win.rustup.rs">win.rustup.rs</a> to obtain the file rustup-init.exe</li>
-        <li>Run this program</li>
-        <li>Open a command prompt, type <code>cargo install ospl</code>, press enter and wait
-            this installs or upgrades OSPL</li>
+        <li>open a command prompt and run <code>winget install -e --id Microsoft.VisualStudio.2022.BuildTools</code>.
+            you may need to accept a license agreement by pressing <code>y</code>.<br/>
+            During installation select "desktop development with C++"<br/>
+            ensuring to include "MSVC toolchain (latest x64/x86)" and "Windows 10/11 SDK"</li>
+
+        <li>also install git: <code>winget install -e --id Git.Git</code></li>
+        
+        <li>setup environment variables</li>
+        <ul>
+            <li>windows+r, open <code>sysdm.cpl</code></li>
+            <li>go to the 'advanced' tab</li>
+            <li>click on 'environment variables...'</li>
+            <li>click on 'path' in the 'user' section</li>
+            <li>click on 'edit...'</li>
+            <li>add <code>%USERPROFILE%\.cargo\bin</code></li>
+        </ul>
+        <li>go to <a href="https://win.rustup.rs">win.rustup.rs</a> to obtain the file rustup-init.exe</li>
+        <li>run this program</li>
+        <li>open a command prompt, ensure you are in your home folder</li>
+        <li><code>git clone https://github.com/ospl-lang/osmium</code></li>
+        <li><code>cd osmium</code></li>
+        <li><code>cargo install --path 'crates/ospl-toolchain'</code></li>
     </ul>
 
-    <h1>MacOS installation</h1>
-    <p>MACOS SUPPORT SHOULD WORK, BUT IT IS UNTESTED!!! USE THE SAME STEPS AS LINUX AND IT MAY OR MAY NOT WORK.</p>
+    <h1>macos installation</h1>
+    <p>macos is untested!</p>
+    <ul>
+        <li>basically the same steps as unix, just editing .zprofile instead of .profile</li>
+        <li>ensure you have xcode <code>xcode-select --install</code></li>
+        <li><code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></li>
+        <li><code>rustup toolchain install stable</code></li>
+        <li><code>git clone https://github.com/ospl-lang/osmium</code></li>
+        <li><code>cd osmium</code></li>
+        <li><code>cargo install --path 'crates/ospl-toolchain'</code></li>
+        <li><code>echo 'export PATH="$PATH:$HOME/.cargo/bin"' >> $HOME/.zprofile</code></li>
+    </ul>
 </body>
 
 </html>
